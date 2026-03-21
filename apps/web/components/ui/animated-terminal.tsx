@@ -52,7 +52,7 @@ export function AnimatedTerminal() {
   }, [currentLineIndex, currentCharIndex]);
 
   return (
-    <div className="w-full max-w-2xl rounded-lg border border-border bg-foreground p-4 font-mono text-sm text-background md:p-6 pb-12">
+    <div className="w-full max-w-2xl rounded-lg border border-border bg-foreground p-4 font-mono text-sm text-background md:p-6 pb-12 md:pb-16">
       <div className="mb-4 flex items-center gap-3 w-full">
         <div className="flex gap-2">
           <div className="size-3 rounded-full bg-red-500/70" />
