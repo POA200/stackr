@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 
 type FeatureCardContent = {
   title: string;
@@ -78,8 +79,12 @@ export function FeaturesSection() {
                 {card.description}
               </p>
 
-              <p className="mt-8 md:mt-18 text-sm font-regular text-background sm:mt-6">
+              <p className="mt-8 md:mt-18 text-sm font-regular text-background sm:mt-6 cursor-pointer hover:text-primary/90">
                 {card.ctaLabel}
+                <ChevronRight
+                  className="size-4 inline-block ml-1"
+                  aria-hidden="true"
+                />
               </p>
             </article>
           ))}
