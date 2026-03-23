@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { AnimatedTerminal } from "@/components/ui/animated-terminal";
 
+const DOCS_URL = "https://stackr.gitbook.io/stackr-overview/~/changes/2";
+
 export function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-background py-24 md:py-48">
@@ -37,12 +39,14 @@ export function HeroSection() {
             >
               Launch a token
             </Button>
-            <Button
-              size="lg"
-              className="font-semibold bg-transparent border-1 border-foreground text-foreground hover:bg-foreground/10 px-8 py-6 md:py-5"
+            <a
+              href={DOCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg border border-foreground bg-transparent px-8 py-6 text-sm font-semibold whitespace-nowrap text-foreground transition-all outline-none select-none hover:bg-foreground/10 active:translate-y-px md:py-5"
             >
               Read docs
-            </Button>
+            </a>
           </div>
         </div>
 

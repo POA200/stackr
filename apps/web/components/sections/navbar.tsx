@@ -5,11 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
+const DOCS_URL = "https://stackr.gitbook.io/stackr-overview/~/changes/2";
+
 const NAV_ITEMS = [
   { label: "Token Feed", href: "#features" },
   { label: "Agents", href: "#how-it-works" },
   { label: "Launch A Token", href: "#cta" },
-  { label: "Docs", href: "#" },
+  { label: "Docs", href: DOCS_URL },
   { label: "API Keys", href: "#" },
   { label: "LLM", href: "#" },
   { label: "Talk to Stackr", href: "#" },
@@ -66,6 +68,10 @@ export function NavbarSection() {
                 <li key={item.label} className="shrink-0">
                   <Link
                     href={item.href}
+                    target={item.label === "Docs" ? "_blank" : undefined}
+                    rel={
+                      item.label === "Docs" ? "noopener noreferrer" : undefined
+                    }
                     className="inline-flex h-9 items-center rounded-md border border-border bg-background px-3 text-[11px] font-semibold tracking-[0.12em] uppercase transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
                     {item.label}
@@ -138,13 +144,15 @@ export function NavbarSection() {
             </button>
           </div>
 
-          <nav className="flex flex-1 flex-col gap-6">
+          <nav className="flex flex-1 flex-col gap-4">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
+                target={item.label === "Docs" ? "_blank" : undefined}
+                rel={item.label === "Docs" ? "noopener noreferrer" : undefined}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex h-11 items-center rounded-md border border-foreground px-4 text-sm font-regular tracking-wide uppercase transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="inline-flex items-center bg-muted/12 px-6 py-4 text-sm font-regular tracking-wide uppercase transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {item.label}
               </Link>
